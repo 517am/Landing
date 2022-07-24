@@ -1,6 +1,13 @@
+@import "mixins&variables.scss";
+
 * {
     padding: 0;
     margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    ;
 }
 
 a {
@@ -18,7 +25,7 @@ button {
 
 .wrapper-header {
     width: 100%;
-    background: url(/assets/img/header/bg-header.jpg);
+    background: url(assets/img/header/bg-header.jpg);
     background-size: cover;
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
@@ -80,7 +87,7 @@ button {
             }
 
             button {
-                background-color: #7B61FF;
+                background-color: $colorBtn;
                 width: 270px;
                 height: 70px;
                 font-size: 18px;
@@ -95,6 +102,7 @@ button {
         }
 
         .filter {
+            border-radius: 12px;
             margin: 180px 0 100px 0;
             width: 100%;
             max-width: 1140px;
@@ -109,29 +117,291 @@ button {
                 button {
                     width: 60px;
                     height: 60px;
-                    background-color: #7B61FF;
-                    border-radius: 12px;
-                    -webkit-border-radius: 12px;
-                    -moz-border-radius: 12px;
-                    -ms-border-radius: 12px;
-                    -o-border-radius: 12px;
-                    color: #fff;
+                   @include squareBtn;
                 }
 
-                .filter__item{
+                .filter__item {
                     padding-left: 40px;
                     position: relative;
-                    &:before{
+
+                    &:before {
                         content: '';
                         display: block;
-                        background-image: url(/assets/img/icons/location.png);
+                        background-image: url(assets/img/icons/location.png);
                         width: 22px;
                         height: 25px;
                         position: absolute;
                         left: 0;
                         top: 5px;
                     }
+
+                    p:nth-child(odd) {
+                        @include grayText;
+                    }
+
+                    p:nth-child(even) {
+                        @include boldText;
+                    }
                 }
+            }
+        }
+    }
+}
+
+.wrapper-main {
+    width: 100%;
+
+    main {
+        max-width: 1370px;
+        margin: 0 auto;
+
+        .destinations__title {
+            @include titleMain;
+        }
+
+        .destinations__list {
+            @include positionList;
+
+            p {
+                &:nth-child(even) {
+                    @include boldText;
+                    margin-top: 8px;
+                }
+
+                &:nth-child(odd) {
+                    @include smallGreyText;
+                }
+
+            }
+        }
+
+        .hotels__name {
+            @include positionTitle;
+
+            h2 {
+                @include titleMain;
+                margin: 0;
+            }
+
+            a {
+                @include viewAllBtn;
+            }
+        }
+
+        .hotels__list {
+            @include positionList;
+
+            h4 {
+                @include boldText;
+            }
+
+            .item__info {
+                @include positionList;
+
+                p {
+                    @include smallGreyText;
+                }
+            }
+        }
+
+        .travel__name {
+            @include positionTitle;
+
+            h2 {
+                @include titleMain;
+                margin: 0;
+            }
+
+            a {
+                @include viewAllBtn;
+            }
+        }
+
+        .travel__list {
+            @include positionList;
+
+            .travel__item {
+                display: flex;
+                flex: 1;
+
+                .travel__info {
+                    margin: 0 30px;
+                    position: relative;
+
+                    h3 {
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #5B5B5B;
+                        line-height: 32px;
+                        margin-top: 15px;
+                    }
+
+                    .travel__social {
+                        position: absolute;
+                        bottom: 0;
+
+                        span {
+                            color: #878787;
+                            font-size: 12px;
+                            font-weight: 400;
+                            line-height: 18px;
+                            padding-left: 20px;
+                            margin-left: 25px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .activities__name {
+            @include positionTitle;
+
+            h2 {
+                @include titleMain;
+                margin: 0;
+            }
+
+            a {
+                @include viewAllBtn;
+            }
+        }
+
+        .activities__list {
+            @include positionList;
+
+            p {
+                @include boldText;
+                margin-top: 10px;
+            }
+        }
+
+        .about-us {
+            max-width: 1140px;
+            @include positionTitle;
+            margin: 120px auto 60px auto;
+            align-items: center;
+
+            .about-us__info {
+                flex: 1;
+                
+                h2 {
+                    font-size: 32px;
+                    line-height: 48px;
+                    font-weight: 600;
+                }
+
+                p {
+                    font-size: 16px;
+                    line-height: 32px;
+                    font-weight: 400;
+                    margin: 30px 0;
+                }
+
+                a {
+                    @include viewAllBtn;
+                    width: 133px;
+                    height: 34px;
+                    padding: 10px 34px 10px 10px;
+                    line-height: 34px;
+                }
+
+
+            }
+
+            img {
+                border-radius: 24px;
+                -webkit-border-radius: 24px;
+                -moz-border-radius: 24px;
+                -ms-border-radius: 24px;
+                -o-border-radius: 24px;
+                flex: 1;
+                width: 50%;
+            }
+
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    background-color: #f9f9f9;
+    margin-top: 120px;
+
+    .footer__container {
+        max-width: 1370px;
+        margin: 0 auto;
+        padding: 120px 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .footer__info {
+            flex: 1;
+        }
+
+        .subscribe {
+            flex: 1;
+
+            input {
+                width: 100%;
+                max-width: 300px;
+                height: 72px;
+                border: none;
+                background-color: #ffffff;
+                border-radius: 12px;
+                -webkit-border-radius: 12px;
+                -moz-border-radius: 12px;
+                -ms-border-radius: 12px;
+                -o-border-radius: 12px;
+                text-indent: 55px;
+                margin-top: 20px;
+                font-size: 16px;
+            }
+
+            button{
+                width: 72px;
+                height: 72px;
+                @include squareBtn;
+                margin-left: 15px;
+            }
+        }
+
+
+        .about__links {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 64px;
+
+            h4 {
+                margin-bottom: 8px;
+            }
+
+            li {
+                margin: 6px 0;
+            }
+        }
+
+        .item {
+
+
+            p,
+            li {
+                font-size: 13px;
+                font-weight: 400px;
+                line-height: 20px;
+                color: #5B5B5B;
+            }
+
+            h4 {
+                font-size: 18px;
+                line-height: 27px;
+                font-weight: 500;
             }
         }
     }

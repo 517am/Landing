@@ -1,0 +1,63 @@
+$colorBtn: #7B61FF;
+
+@mixin squareBtn {
+    background-color: $colorBtn;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    color: #fff;
+}
+
+@mixin grayText {
+    color: #5B5B5B;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 2px 0;
+}
+
+@mixin boldText {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 2px 0;
+}
+
+@mixin smallGreyText {
+    font-size: 13px;
+    font-weight: 400;
+    color: #979797;
+}
+
+@mixin titleMain {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 120px 0 60px;
+    color: #161414;
+}
+
+@mixin positionList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@mixin positionTitle {
+    display: flex;
+    justify-content: space-between;
+    margin: 120px 0 60px 0;
+}
+
+@mixin viewAllBtn {
+    width: 105px;
+    height: 45px;
+    background-color: #F6F4FF;
+    color: #5243C2;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    text-indent: 10px;
+    line-height: 45px;
+}
